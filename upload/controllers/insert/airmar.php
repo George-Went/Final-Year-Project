@@ -1,6 +1,6 @@
 <?php 
 //------------------ Selection of the correct table for CSV file insertion -----------------------------//
-while($data = fgetcsv($handle))
+while($data = fgetcsv($handle)) // Imports csv values into an array
    {
     $time = mysqli_real_escape_string($connect, $data[0]);  
     $altitude = mysqli_real_escape_string($connect, $data[1]);
@@ -21,15 +21,15 @@ mysqli_query($connect, $query);
 //-------------------------------------------------------------------------------------//
 
 
-//------------------ output any error during devlopment -----------------------------//
+//------------------ output any error during development -----------------------------//
 
 /*if(mysqli_query($connect, $query)){
     echo "Records inserted successfully. <br/>";
 	echo $time . "<br/> <br/>";
 } else{
     echo "ERROR: Could not able to execute" . mysqli_error($connect);
-} */
-			
+} */	
+
    }
 //------------------ clean removes headings from csv file/database -----------------------------//
 $clean ="DELETE FROM `airmar` WHERE `airmar`.`journey_time` = '00:00:00'";
