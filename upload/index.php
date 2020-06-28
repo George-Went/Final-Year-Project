@@ -175,7 +175,11 @@ if (isset($_POST["submit"])) {
           <input type="file" id="file" class="form-control-file" name="file" />
         </div>
 
-        <input type="submit" name="submit" value="Import" class="btn btn-primary" />
+        <div class="alert alert-danger" role="alert">
+          Uploading large files can take some time
+        </div>
+
+        <input type="submit" name="submit" value="Upload" class="btn btn-primary" />
 
       </form>
 

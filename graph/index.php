@@ -62,7 +62,7 @@ include '../script/date.php';
                     <input type="time" class="form-control" id="end_time" name="end_time" value="<?php echo $today; ?>" />
                 </div>
             </div>
-            <input type="submit" id="submit" name="submit" value="Submit" class="btn btn-success" />
+            <input type="submit" id="submit" name="submit" value="Display" class="btn btn-success" />
 
         </form>
     </main>

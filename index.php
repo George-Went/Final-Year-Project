@@ -11,8 +11,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
 
   <!-- Bootstrap core CSS -->
-  <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApF/index.php on line 12ets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApF/index.php on line 12ets/img/favicons/apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
   <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
@@ -22,10 +21,8 @@
   <meta name="theme-color" content="#563d7c">
 
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
   <style>
     .bd-placeholder-img {
@@ -49,28 +46,28 @@
 
 <body>
 
-  <?php require "templates/nav.php"?>
+  <?php require "templates/nav.php" ?>
 
   <main role="main" class="container">
     <div class="row">
       <div class="col-sm">
         <div class="card" style="width:18rem; margin-top:10%; ">
-          <img src="..." class="card-img-top" alt="hovercraft image">
+          <img src="img/Line-Chart.png" class="card-img-top" alt="hovercraft image">
           <div class="card-body">
             <h5 class="card-title">Show Data</h5>
             <p class="card-text">Display Data from hovercraft</p>
-          <a href="#" class="btn btn-primary">Graph Data</a>
+            <a href="/Dissertation_Final/graph" class="btn btn-primary">Graph Data</a>
           </div>
-        </div>  
+        </div>
       </div>
 
       <div class="col-sm">
         <div class="card" style="width:18rem; margin-top:10%;">
-          <img src="..." class="card-img-top" alt="hovercraft image">
+          <img src="img/hover-craft.jpg" class="card-img-top" alt="hovercraft image">
           <div class="card-body">
             <h5 class="card-title">Upload</h5>
             <p class="card-text">Upload new CSV data to the database</p>
-          <a href="#" class="btn btn-primary">Upload Data</a>
+            <a href="/Dissertation_Final/upload" class="btn btn-primary">Upload Data</a>
           </div>
         </div>
       </div>
@@ -81,13 +78,11 @@
   <!-- /.container -->
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-  <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+  </script>
+  <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 </body>
 
 </html>
