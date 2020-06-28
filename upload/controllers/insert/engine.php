@@ -1,5 +1,6 @@
 <?php 
 //------------------ Selection of the correct table for CSV file insertion -----------------------------//
+
 while($data = fgetcsv($handle))
    {
     $time = mysqli_real_escape_string($connect, $data[0]);  
@@ -14,7 +15,6 @@ while($data = fgetcsv($handle))
 	
 	
 $query = "INSERT INTO `engine` (`journey_date`, `journey_time`, `hover_crafthull_ID`, `STBD Fuel Rate`, `Port Fuel Rate`, `STBD Percent Load`, `Port Percent Load`, `STBD Percent Torque`, `Port Percent Torque`, `STBD_Tachometer`, `Port_Tachometer`) VALUES ('$data_date', '$time', '$client', '$stbd_fuel', '$port_fuel', '$stbd_load', '$port_load', '$stbd_torque', '$port_torque', '$stbd_tachometer', '$port_tachometer')";
-
 
 
 mysqli_query($connect, $query);
@@ -36,4 +36,3 @@ mysqli_query($connect, $query);
 $clean ="DELETE FROM `engine` WHERE `engine`.`journey_time` = '00:00:00'";
 mysqli_query($connect, $clean);
 //-------------------------------------------------------------------------------------//
-?>

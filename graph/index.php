@@ -9,7 +9,9 @@ include '../script/date.php';
 
 <head>
     <title>Griffon Hoverworks</title>
-    <script src="script/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
@@ -20,12 +22,10 @@ include '../script/date.php';
 
 
 
-    <main role="main" class="container mx-auto">
+    <main role="main" class="container mx-auto pt-3">
 
-        <h3>Display DATA</h3><br />
-
-        <form id="form" action="action.php" method="POST" enctype="multipart/form-data">
-
+        <h3>Display Craft Data</h3>
+        <form id="form">
 
             <!-- Dynamically generated list of hovercrafts -->
             <div class="form-group">
@@ -46,13 +46,6 @@ include '../script/date.php';
                 </select>
             </div>
 
-            <div class="form-group">
-
-
-
-
-
-            </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="start">Date:</label>
@@ -69,14 +62,14 @@ include '../script/date.php';
                     <input type="time" class="form-control" id="end_time" name="end_time" value="<?php echo $today; ?>" />
                 </div>
             </div>
-            <input type="submit" id="submit" name="submit" value="Import" class="btn btn-success" />
+            <input type="submit" id="submit" name="submit" value="Submit" class="btn btn-success" />
 
         </form>
+    </main>
+    <!-- <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='https://www.w3schools.com/jquery/demo_wait.gif' width="64" height="64" /><br>Loading..</div> -->
 
 
-        <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='https://www.w3schools.com/jquery/demo_wait.gif' width="64" height="64" /><br>Loading..</div>
-
-
+    <main role="main" class="container-fluid mx-auto">
 
         <!-- Chart container divisions -->
         <div class="chartContainer" style="height: 400px; width: 100%;"></div>
@@ -96,25 +89,16 @@ include '../script/date.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Displaying the data using canvas graphs -->
 
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 <script type="text/javascript">
-    // Canvas Draw Functions
 
+// Canvas Draw Functions
+    //-------------------------------------------------------------------------------------------------------------------
+    // ENGINE (TACHOMETER)
+    //--------------------------------------------------------------------------------------------------------------------
     let draw_chart = function(data) {
         $(function() {
             var chart = $(".chartContainer").CanvasJSChart({
@@ -557,12 +541,14 @@ include '../script/date.php';
             $.post("action.php",
                 $(this).serialize(),
                 function(data, status) {
+                    $("#wait").css("display", "none");
+                    console.log({
+                        data
+                    })
                     if (data == 0) {
                         alert('Nothing Found');
-                        $("#wait").css("display", "none");
                         return;
                     }
-                    $("#wait").css("display", "none");
                     let all_data = JSON.parse(data);
                     let data_parsed = JSON.parse(data);
 

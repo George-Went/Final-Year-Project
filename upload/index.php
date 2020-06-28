@@ -125,35 +125,38 @@ if (isset($_POST["submit"])) {
   <?php require "../templates/nav.php" ?>
 
 
-  <main role="main" class="container">
-    <div class="mx-auto" style="margin-top: 10%;">
+  <main role="main" class="container mx-auto pt-3">
+    <div>
 
-
-      <form>
+      <h3>Upload Craft Data</h3>
+      <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Select a hovercraft</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="client">Select a hovercraft</label>
+          <select class="form-control" id="client" name="client">
             <?php
-              // Select hovercraft names from table
-              $sqlSelect = "SELECT `id`, `name` FROM hover_craft";
-              $result = $connect->query($sqlSelect);
-    
-              $rows=[];
+            // Select hovercraft names from table
+            $sqlSelect = "SELECT `id`, `name` FROM hover_craft";
+            $result = $connect->query($sqlSelect);
 
-              while ($row = mysqli_fetch_array($result)) {
-                $rows[] = $row;
-              }
+            $rows = [];
 
-              foreach ($rows as $row) {
-                print "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-              }
+            while ($row = mysqli_fetch_array($result)) {
+              $rows[] = $row;
+            }
+
+            foreach ($rows as $row) {
+              print "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+            }
             ?>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Select a sensor</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="sensor">Select a sensor</label>
+          <select class="form-control" id="sensor" name="sensor">
+            <option value="airmar">Airmar</option>
+            <option value="ballast">Ballast</option>
+            <option value="battery">Battery</option>
             <option value="bearing">Bearing</option>
             <option value="craft">Craft</option>
             <option value="engine">Engine</option>
@@ -164,12 +167,12 @@ if (isset($_POST["submit"])) {
 
         <div class="form-group">
           <label for="date">Date of sample data</label>
-          <input type="date" id="date" class="form-control" />
+          <input type="date" id="date" class="form-control" name="data_date" />
         </div>
 
         <div class="form-group">
           <label for="file">File Upload</label>
-          <input type="file" id="file" class="form-control-file" />
+          <input type="file" id="file" class="form-control-file" name="file" />
         </div>
 
         <input type="submit" name="submit" value="Import" class="btn btn-primary" />

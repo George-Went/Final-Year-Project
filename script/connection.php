@@ -1,4 +1,3 @@
-<!-- Used to connect to the sql server -->
 <?php 
    $servername = "localhost";
    $username = "root";
